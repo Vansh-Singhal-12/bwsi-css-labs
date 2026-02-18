@@ -39,3 +39,13 @@ def test_invalid_operation():
 
 if __name__ == "__main__":
     pytest.main()
+
+def test_more_math():
+    # Standard input
+    assert simple_calculator("add", 100, 200) == 300
+    
+    # Negative number edge case
+    assert simple_calculator("subtract", -5, -5) == 0
+    
+    # Decimal/Float edge case
+    assert simple_calculator("multiply", 2.5, 2) == 5.0
