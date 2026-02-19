@@ -11,7 +11,11 @@ and prints the result to the terminal window.
 
 """
 
-def simple_calculator(operation: str, num1: float, num2: float) -> float:
+def simple_calculator(
+        operation: str, 
+        num1: float, 
+        num2: float
+        ) -> float:
     """
     Function that takes in two numbers and an operation
       (add, subtract, multiply, divide),
@@ -40,8 +44,8 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         else:
             raise ValueError("Cannot divide by zero.")
     else:
-        raise ValueError("Invalid operation. Please " \
-        "choose from 'add', 'subtract', 'multiply',"
+        raise ValueError("Invalid operation. " \
+        "Please choose from 'add', 'subtract', 'multiply',"
         " or 'divide'.")
 
 def request_sanitized_number(prompt: str) -> float:
@@ -57,12 +61,12 @@ def request_sanitized_number(prompt: str) -> float:
             number = float(input(prompt))
             return number
         except ValueError:
-            print("Invalid input. Please enter a valid " \
-            "number.")
+            print("Invalid input. Please enter a valid number"
+            ".")
 
 def main():
     
-    print(f"===== Simple Calculator =====")
+    print("===== Simple Calculator =====")
 
     # Ask the user for sample input    
     num1 = request_sanitized_number("Enter the first number:" \
@@ -80,10 +84,10 @@ def main():
             " Please choose from the list.")
 
     # Perform the calculation and display the result
-    print(
-        f"The result of {operation}ing {num1} and "
-        f"{num2} is: {result}"
-    )
+    result = simple_calculator(operation, num1, num2)
+    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+
 
 if __name__ == "__main__":
     main()
+
